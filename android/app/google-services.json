@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "959956715028",
+    "project_id": "moviestar-8095e",
+    "storage_bucket": "moviestar-8095e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959956715028:android:95fd1e5b98e187e5060901",
+        "android_client_info": {
+          "package_name": "com.example.moviestar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSXjJRAVeDbM-vfjeGs_J3gS3RrzDimmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
