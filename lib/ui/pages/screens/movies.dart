@@ -15,28 +15,32 @@ class _ListScreenState extends State<ListScreen> {
   Widget build(BuildContext context) {
     var controller = Get.put(AppController());
     return SingleChildScrollView(
-      child: Expanded(
-        child: Obx(() => controller.loading.value
-            ? const Center(
-                child: CircularProgressIndicator(),
-              )
-            : Column(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 14,
-                  ),
-                  MovieListWidget(
-                      category: "Top Rated",
-                      data: controller.getTopRatedMovies),
-                  MovieListWidget(
-                      category: "Popular", data: controller.getPopularMovies),
-                  MovieListWidget(
-                      category: "Trending", data: controller.getTrendingMovies),
-                  MovieListWidget(
-                      category: "Now Playing",
-                      data: controller.getNowPlayingMovies)
-                ],
-              )),
+      child: Column(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 14,
+          ),
+          Obx(() => controller.loading.value
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : Column(
+                  children: [
+                    MovieListWidget(
+                        category: "Top Rated",
+                        data: controller.getTopRatedMovies),
+                    MovieListWidget(
+                        category: "Popular",
+                        data: controller.getPopularMovies),
+                    MovieListWidget(
+                        category: "Trending",
+                        data: controller.getTrendingMovies),
+                    MovieListWidget(
+                        category: "Now Playing",
+                        data: controller.getNowPlayingMovies)
+                  ],
+                )),
+        ],
       ),
     );
   }

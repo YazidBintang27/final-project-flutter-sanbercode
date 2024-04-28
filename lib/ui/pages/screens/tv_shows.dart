@@ -10,23 +10,28 @@ class TvShowsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var controller = Get.put(AppController());
     return SingleChildScrollView(
-      child: Expanded(
-        child: Obx(() => controller.loading.value
-            ? const Center(
-                child: CircularProgressIndicator(),
-              )
-            : Column(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 14,
-                  ),
-                  TvShowsWidget(
+      child: Column(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 14,
+          ),
+          Obx(() => controller.loading.value
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : Column(
+                  children: [
+                    TvShowsWidget(
                       category: "Top Rated",
-                      data: controller.getTopRatedTvShows),
-                  TvShowsWidget(
-                      category: "Popular", data: controller.getPopularTvShows),
-                ],
-              )),
+                      data: controller.getTopRatedTvShows,
+                    ),
+                    TvShowsWidget(
+                      category: "Popular",
+                      data: controller.getPopularTvShows,
+                    ),
+                  ],
+                )),
+        ],
       ),
     );
   }
